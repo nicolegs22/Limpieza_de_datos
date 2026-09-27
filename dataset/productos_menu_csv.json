@@ -1,0 +1,51 @@
+{
+	"name": "productos_menu_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LImpieza_de_datos1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "csv"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "productos_menu.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "producto_id",
+				"type": "String"
+			},
+			{
+				"name": "nombre_producto",
+				"type": "String"
+			},
+			{
+				"name": "categoria",
+				"type": "String"
+			},
+			{
+				"name": "precio_lista",
+				"type": "String"
+			},
+			{
+				"name": "costo_estimado",
+				"type": "String"
+			},
+			{
+				"name": "disponible",
+				"type": "String"
+			}
+		]
+	}
+}
