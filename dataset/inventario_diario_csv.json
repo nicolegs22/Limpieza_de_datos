@@ -1,0 +1,63 @@
+{
+	"name": "inventario_diario_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LImpieza_de_datos1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "csv"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "inventario_diario.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "inventario_id",
+				"type": "String"
+			},
+			{
+				"name": "fecha_inventario",
+				"type": "String"
+			},
+			{
+				"name": "sucursal_id",
+				"type": "String"
+			},
+			{
+				"name": "producto_id",
+				"type": "String"
+			},
+			{
+				"name": "stock_inicial",
+				"type": "String"
+			},
+			{
+				"name": "entradas",
+				"type": "String"
+			},
+			{
+				"name": "salidas",
+				"type": "String"
+			},
+			{
+				"name": "stock_final",
+				"type": "String"
+			},
+			{
+				"name": "punto_reorden",
+				"type": "String"
+			}
+		]
+	}
+}
