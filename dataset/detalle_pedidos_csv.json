@@ -1,0 +1,55 @@
+{
+	"name": "detalle_pedidos_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LImpieza_de_datos1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "csv"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "detalle_pedidos.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "detalle_id",
+				"type": "String"
+			},
+			{
+				"name": "pedido_id",
+				"type": "String"
+			},
+			{
+				"name": "producto_id",
+				"type": "String"
+			},
+			{
+				"name": "cantidad",
+				"type": "String"
+			},
+			{
+				"name": "precio_unitario",
+				"type": "String"
+			},
+			{
+				"name": "descuento_linea",
+				"type": "String"
+			},
+			{
+				"name": "total_linea",
+				"type": "String"
+			}
+		]
+	}
+}
