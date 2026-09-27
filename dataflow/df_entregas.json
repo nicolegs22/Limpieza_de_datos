@@ -3,11 +3,31 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "entregas_csv",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          entrega_id as string,",
+				"          pedido_id as string,",
+				"          repartidor_id as string,",
+				"          hora_salida as string,",
+				"          hora_entrega as string,",
+				"          tiempo_entrega_min as string,",
+				"          distancia_km as string,",
+				"          estado_entrega as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}
