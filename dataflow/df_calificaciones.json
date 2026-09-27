@@ -3,11 +3,29 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "calificaciones_csv",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          calificacion_id as string,",
+				"          pedido_id as string,",
+				"          cliente_id as string,",
+				"          fecha_calificacion as string,",
+				"          puntuacion as string,",
+				"          comentario as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}
