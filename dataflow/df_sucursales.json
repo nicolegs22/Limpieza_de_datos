@@ -3,11 +3,31 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "sucursales_csv",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          sucursal_id as string,",
+				"          restaurante_id as string,",
+				"          nombre_sucursal as string,",
+				"          ciudad as string,",
+				"          zona as string,",
+				"          direccion as string,",
+				"          capacidad_mesas as string,",
+				"          tiene_delivery as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}
